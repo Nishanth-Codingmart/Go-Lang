@@ -1,0 +1,10 @@
+services:
+  kvstore:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      - PORT=8080
+      - CLEANUP_INTERVAL=1m
+      - SHARD_COUNT=16
+    restart: unless-stopped
